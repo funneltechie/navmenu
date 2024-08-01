@@ -1,0 +1,185 @@
+<nav class="nav-container">
+    <ul class="menu">
+        <li><a href="https://funneltechie.com/about">About me</a></li>
+        <li class="dropdown">
+            <a href="#">Email Service</a>
+            <ul class="dropdown-menu">
+                <li><a href="https://funneltechie.com/emailservice">Base Email Packages</a></li>
+                <li><a href="https://funneltechie.com/premium">Premium Email Service</a></li>
+            </ul>
+        </li>
+        <li class="dropdown">
+            <a href="#">HighLevel Email Tools</a>
+            <ul class="dropdown-menu">
+                <li><a href="https://ghl.funneltechie.com/emailengagementsystem">Email Engagement System</a></li>
+                <li><a href="https://myinboxiq.com">InboxIQ</a></li>
+            </ul>
+        </li>
+        <li><a href="#open-popup">Questions</a></li>
+        <li><a href="https://funneltechie.com/schedule">Schedule a Call</a></li>
+    </ul>
+</nav>
+<nav class="mobile-nav-container">
+    <button class="mobile-menu-toggle" id="mobile-menu-toggle">☰</button>
+    <ul class="mobile-menu" id="mobile-menu">
+        <li><a href="https://funneltechie.com/about">About me</a></li>
+        <li class="mobile-dropdown">
+            <a href="#">Email Service</a>
+            <ul class="mobile-dropdown-menu">
+                <li><a href="https://funneltechie.com/emailservice">Base Email Packages</a></li>
+                <li><a href="https://funneltechie.com/premium">Premium Email Service</a></li>
+            </ul>
+        </li>
+        <li class="mobile-dropdown">
+            <a href="#">HighLevel Email Tools</a>
+            <ul class="mobile-dropdown-menu">
+                <li><a href="https://ghl.funneltechie.com/emailengagementsystem">Email Engagement System</a></li>
+                <li><a href="https://myinboxiq.com">InboxIQ</a></li>
+            </ul>
+        </li>
+        <li><a href="#open-popup">Questions</a></li>
+        <li><a href="https://funneltechie.com/schedule">Schedule a Call</a></li>
+    </ul>
+</nav>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+    .nav-container {
+        background-color: #000000;
+        display: flex;
+        justify-content: center;
+        position: relative;
+    }
+    .menu {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+    }
+    .menu li {
+        position: relative;
+    }
+    .menu a {
+        color: white;
+        padding: 15px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+    }
+    .menu a:hover {
+        background-color: #575757;
+    }
+    .dropdown:hover .dropdown-menu,
+    .mobile-dropdown:hover .mobile-dropdown-menu {
+        display: block;
+    }
+    .dropdown-menu,
+    .mobile-dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: #222222;
+        border: 1px solid #575757;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        top: 100%;
+        left: 0;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        min-width: 200px;
+    }
+    .dropdown-menu li a,
+    .mobile-dropdown-menu li a {
+        padding: 10px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 20px;
+        color: white;
+        text-decoration: none;
+        text-align: left; /* Ensure dropdown items are left-aligned */
+    }
+    .dropdown-menu li a:hover,
+    .mobile-dropdown-menu li a:hover {
+        background-color: #575757;
+    }
+    /* Mobile view */
+    @media (max-width: 600px) {
+        .nav-container {
+            display: none; /* Hide desktop nav on mobile */
+        }
+        .mobile-nav-container {
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 1001;
+            width: 100%;
+        }
+        .mobile-menu-toggle {
+            display: none;
+            background-color: #000000;
+            color: white;
+            border: none;
+            font-size: 30px;
+            cursor: pointer;
+            padding: 10px;
+            z-index: 1003; /* Ensure toggle button is above other elements */
+            position: absolute;
+            top: 15px;
+            right: 15px;
+        }
+        .mobile-menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 20px;
+            display: none;
+        }
+        .mobile-menu li {
+            position: relative;
+        }
+        .mobile-menu a {
+            color: white;
+            padding: 15px;
+            display: block;
+            text-decoration: none;
+            text-align: center;
+        }
+        .mobile-menu a:hover {
+            background-color: #575757;
+        }
+        .mobile-menu.show {
+            display: flex; /* Show menu items when toggled */
+        }
+        .mobile-menu-toggle {
+            display: block;
+            margin: 0 auto; /* Center the hamburger button */
+        }
+    }
+    @media (min-width: 600px) {
+        .mobile-nav-container {
+            display: none; /* Hide mobile nav on larger screens */
+        }
+        .mobile-menu-toggle {
+            display: none; /* Hide the toggle button on larger screens */
+        }
+        .menu {
+            flex-direction: row;
+        }
+    }
+</style>
+<script>
+    document.getElementById('mobile-menu-toggle').addEventListener('click', function() {
+        var menu = document.getElementById('mobile-menu');
+        menu.classList.toggle('show');
+    });
+</script>
